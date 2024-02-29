@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Spacemesh in 5-minutes!</title>
+    <meta
+      name="description"
+      content="An overview of the Spacemesh blockchain sufficient to allow the reader to decide whether to continue their exploration, and how to go about doing that."
+    />
+    <meta property="og:image" content="https://spacemesh.fyi/img/og.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+    <div class="px-4 py-8 mx-auto prose sm:py-16">
+      <img src="/img/spacemesh-logo.png" alt="" class="object-contain w-8" />
+
+      <h1 id="spacemeshin5-minutes">Spacemesh in 5-minutes!</h1>
+
+      <p>
+        <strong>Spacemesh.fyi</strong> is intended to be one’s first contact
+        with the <strong>Spacemesh</strong> blockchain project.
+      </p>
+
+      <p>
+        It’s objective is to provide enough information in five-minutes to allow
+        the reader to decide whether to continue their exploration, and how to
+        go about doing that.
+      </p>
+
+      <p>
+        This site was created by
+        <a href="https://twitter.com/dafacto">@dafacto</a>—maker of the
+        <a href="https://SmeshWallet.com">SmeshWallet</a> web wallet—with the
+        generous feedback of community member @earl.
+      </p>
+
+      <h2 id="whatisspacemesh">What is Spacemesh?</h2>
+
+      <p>
+        <a href="https://spacemesh.io">Spacemesh</a> is a novel L1 blockchain,
+        that uses <strong>Proof of Space &amp; Time</strong> (PoST) as its
+        consensus mechanism.
+      </p>
+
+      <p>
+        Whereas Bitcoin uses “Proof of Work”, how much computer work you
+        provide, and Ethereum uses “Proof of Stake”, how much ETH you have
+        locked, Spacemesh participation is based on—<em
+          >how much computer disk space you dedicate exclusively to the network
+          over time</em
+        >.
+      </p>
+
+      <p>
+        The Spacemesh consensus protocol is operated by miners—also known as
+        “Smeshers”—who:
+      </p>
+
+      <ol>
+        <li>
+          <em>Dedicate space</em> —&nbsp;Create and maintain cryptographic data
+          known as “postdata”, which might range from a few GB, to many TBs.
+        </li>
+        <li>
+          <em>Run nodes</em> — Run Spacemesh nodes which participate in the two
+          consensus protocols, known as Hare and Tortoise, by periodically—each
+          two weeks—proving they have dedicated their postdata over that period
+          of time.
+        </li>
+        <li>
+          <em>Earn rewards</em> — For their participation, Smeshers receive
+          rewards in the form of the SMH coin, in proportion to the amount of
+          postdata they have dedicated to the network.
+        </li>
+      </ol>
+
+      <p>
+        An important difference between Spacemesh and other PoST blockchains, is
+        that every Smesher, regardless of size, has an equal chance of receiving
+        their fair share of rewards—a feature intended to motivate large numbers
+        of home miners, resulting in decentralization comparable to Bitcoin.
+      </p>
+
+      <p>
+        The project was started and received its initial funding in 2018, and
+        launched its mainnet in July of 2023.
+      </p>
+
+      <h2 id="intendedutility">Intended utility</h2>
+
+      <p>
+        Unlike Bitcoin, Spacemesh is not targeting the money/currency use case,
+        in which SMH would be used for payments.
+      </p>
+
+      <p>
+        Instead, Spacemesh intends to implement a “Virtual Machine”, which
+        supports <strong>smart-contracts</strong>, such that it would compete
+        with blockchains like Ethereum as a
+        <strong>global decentralized computer</strong>, on which businesses
+        could build and operate decentralized applications (dApps).
+      </p>
+
+      <h2 id="tokenomics">Tokenomics</h2>
+
+      <p>
+        The Spacemesh
+        <a href="https://spacemesh.io/blog/spacemesh-economics-intro/"
+          >tokenomics model</a
+        >
+        was inspired by Bitcoin, i.e. the large majority of coins are fairly
+        allocated to miners, with a small percentage (about 6%) allocated to the
+        team and initial investors, over a period of 875 years.
+      </p>
+
+      <h2 id="protocolandmining">Protocol and mining</h2>
+
+      <p>
+        The following is a much-simplified explanation of the Spacemesh protocol
+        and mining. See the
+        <a href="https://spacemesh.io/blog/the-spacemesh-consensus-protocol/"
+          >consensus mechanism</a
+        >
+        document and
+        <a href="https://github.com/spacemeshos/wiki/wiki/Smesher-Guide"
+          >Smesher’s Guide</a
+        >
+        for the nitty gritty details.
+      </p>
+
+      <ol>
+        <li>
+          <strong>Consensus operation</strong> —&nbsp;The Spacemesh consensus
+          mechanism is based on two protocols operated by
+          <em>eligible nodes</em>:
+
+          <ul>
+            <li>
+              “Hare” — the fast organization of “layers”, containing blocks of
+              transactions.
+            </li>
+            <li>
+              “Tortoise” — the slower, ultimate ratification of the blockchain
+              state.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Epochs</strong> — Since “time” is an aspect of its consensus
+          mechanism, Spacemesh activities happen within two-week cycles, known
+          as “epochs”. For a smeshing node to participate and earn rewards in a
+          given epoch, it must have established its eligibility in the
+          <em>previous</em> epoch by publishing a “Proof of Space &amp; Time”
+          (PoST).
+        </li>
+        <li>
+          <strong>PoST Init</strong> — The first job of a smeshing node,
+          however, is to create its cryptographically dedicated computer space,
+          known as “postdata”—a process in which a unique node identifier is
+          additionally created associated with that data. This process requires
+          a GPU, and can take a lengthy period of time. After the data has been
+          created, the node registers its data and ID with the network in a
+          process known as “PoST Init”. At this point, it’s known by the network
+          and ready to start participating.
+        </li>
+        <li>
+          <strong>Eligibility</strong> — A node establishes eligibility for
+          participation in the <em>subsequent</em> epoch by interacting with
+          “PoET” (Proof of Elapsed Time) servers, during a 12-hour window in the
+          <em>current</em> epoch, known as the “Cycle Gap”. During a Cycle Gap,
+          a smeshing node will submit a proof to the PoET server that it
+          maintained its dedicated disk space during the entirety of the
+          previous epoch. Calculating that cryptographic proof involves the CPU
+          and reading of the node’s postdata. This proof must be calculated and
+          submitted within the 12-hour window. If successful, this establishes
+          the node’s eligibility to participate in, and receive rewards, in the
+          <em>subsequent</em> epoch.
+        </li>
+      </ol>
+
+      <h2 id="projectteam">Project team</h2>
+
+      <p>
+        Spacemesh is run by a <a href="https://spacemesh.io/about/">team</a> of
+        approximately 30 people. The lead members include renowned academics and
+        former core Ethereum team members:
+      </p>
+
+      <ul>
+        <li>
+          <a href="https://twitter.com/tomerafek">Tomer Afek</a> (Co-founder
+          &amp; CEO)
+        </li>
+        <li><a href="https://twitter.com/avive">Aviv Eyal</a> (Co-founder)</li>
+        <li>
+          <a href="https://www.cs.cornell.edu/~iddo/">Iddo Bentov</a> (Chief
+          Scientist)
+        </li>
+        <li><a href="https://talmoran.net/">Tal Moran</a> (Chief Scientist)</li>
+        <li>
+          <a href="https://twitter.com/lrettig">Lane Rettig</a> (VP Research
+          &amp; Development)
+        </li>
+      </ul>
+
+      <h2 id="gettinginvolved">Getting involved</h2>
+
+      <h3 id="howcaniminesmh">How can I mine SMH?</h3>
+
+      <p>
+        If you are interested in running a smeshing node and earning SMH
+        rewards, you have two choices.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Smapp</strong> —&nbsp;The project’s desktop application which
+          combines three capabilities—a node, “smeshing”, and a wallet. This is
+          the intended application for the typical home miner, and
+          <a href="https://blog.fabioiotti.com/posts/spacemesh-smapp-smeshing/"
+            >this article</a
+          >
+          provides a step-by-step guide to setting it up.
+        </li>
+        <li>
+          <strong>go-spacemesh</strong> — The project’s CLI software, intended
+          for advanced miners who may be running multiple nodes on a single
+          computer, and “smeshing” multiple sets of postdata. If interested,
+          <a
+            href="https://dafacto.com/2023/how-to-run-multiple-spacemesh-nodes-on-macos"
+            >I posted a blog article</a
+          >
+          about how I run four nodes—one “public”, and three “private”—at home
+          using a Mac mini and four external SSD drives.
+        </li>
+      </ul>
+
+      <h3 id="smhdataandtrading">SMH data and trading?</h3>
+
+      <p>
+        Following are the most-asked questions related to coin data and trading.
+      </p>
+
+      <ol>
+        <li><a href="https://tater-tracker.com">Marketcap?</a></li>
+        <li><a href="https://dash.spacemesh.io">Circulating supply?</a></li>
+        <li>
+          <a href="https://spacemesh.io/blog/spacemesh-issuance-schedule"
+            >Issuance schedule?</a
+          >
+        </li>
+        <li>
+          <a href="https://www.coingecko.com/en/coins/spacemesh"
+            >Where to buy?</a
+          >
+        </li>
+      </ol>
+
+      <h3 id="smhwallets">SMH wallets</h3>
+
+      <ul>
+        <li>
+          <strong>Smapp</strong> — Smapp is the project’s official wallet. The
+          downside of using Smapp as a wallet, is that it’s also a full node,
+          which has to be fully in sync in order to access your SMH funds. And
+          that means keeping it running 24/7.
+        </li>
+        <li>
+          <strong>SmeshWallet</strong> —
+          <a href="https://smeshwallet.com">SmeshWallet</a> is a free web wallet
+          created by the author of this document. It can additionally serve as a
+          companion to Smapp, ensuring that your SMH funds are always available,
+          even if Smapp is not fully sync’d.
+        </li>
+      </ul>
+
+      <p>
+        To learn more about SmeshWallet, its security and the trade-offs of
+        using it alternatively or in combination with Smapp,
+        <a href="https://db.smeshwallet.com/">start here</a>.
+      </p>
+
+      <h3 id="communities">Communities</h3>
+
+      <ul>
+        <li>
+          <strong>Discord</strong> —&nbsp;The primary community is located in
+          <a href="https://chat.spacemesh.io/">Discord</a>. While the team
+          members are not listed in the Discord (but do participate), those
+          community members who have made contributions are given the role
+          “Contributor” and tend to be the most knowledgeable.
+        </li>
+        <li>
+          <strong>Telegram</strong> —&nbsp;Two community Telegram groups, one in
+          <a href="https://t.me/spacemeshen">English</a> and the other in
+          <a href="https://t.me/spacemeshfr">French</a>, are operated by a
+          community member.
+        </li>
+      </ul>
+
+      <h2 id="additionalresources">Additional resources</h2>
+
+      <p><strong>Official resources</strong></p>
+
+      <ul>
+        <li>
+          <em><a href="https://spacemesh.io">Spacemesh.io</a></em> — Official
+          project website.
+        </li>
+        <li>
+          <em><a href="https://github.com/spacemeshos/">GitHub</a></em> —
+          Official project GitHub:
+          <a href="https://github.com/spacemeshos/smapp/releases">Smapp</a>,
+          <a href="https://github.com/spacemeshos/go-spacemesh/releases"
+            >go-spacemesh</a
+          >, <a href="https://github.com/spacemeshos/wiki/wiki">Wiki</a>
+        </li>
+        <li>
+          <em><a href="https://twitter.com/teamspacemesh">Twitter</a></em>
+          —&nbsp;Official Twitter account.
+        </li>
+        <li>
+          <em
+            ><a href="https://github.com/spacemeshos/wiki/wiki/Roadmap"
+              >Roadmap</a
+            ></em
+          >
+          — The current plans for the project.
+        </li>
+      </ul>
+
+      <p><strong>Community contributions</strong></p>
+
+      <ul>
+        <li>
+          <em><a href="https://smeshwallet.com">SmeshWallet</a></em> — Easy to
+          use web wallet that’s the perfect alternative or complement to Smapp.
+          Answers to
+          <a href="https://db.smeshwallet.com">common questions found here</a>.
+        </li>
+        <li>
+          <em><a href="https://tater-tracker.com/">Tater-Tracker</a></em> — A
+          useful alternative explorer for Spacemesh.
+        </li>
+        <li>
+          <em
+            ><a href="https://x.com/SpacemeshRT/status/1737225257034109049?s=20"
+              >Spacemesh Rewards Tracker</a
+            ></em
+          >
+          — A mobile app for tracking a wide range of Spacemesh data.
+        </li>
+        <li>
+          <em
+            ><a href="http://fcmx.net/sm-eligibilities/">Layer Timeline</a></em
+          >
+          — Enter your eligible rewards layers, and let this website tell you
+          when to expect rewards.
+        </li>
+        <li>
+          <em><a href="https://plan.smesh.online/">Hardware Planner</a></em> —
+          An interactive website for planning your Smeshing setup, allowing you
+          to enter the specifics of your hardware to confirm feasibility.
+        </li>
+        <li>
+          <em>Video Tutorials</em> — The two primary channels for video
+          instruction include
+          <a href="https://www.youtube.com/@minerondemand">Miner on Demand</a>
+          (Windows) and
+          <a href="https://www.youtube.com/@hakehardware">Hake Hardware</a>
+          (Unix).
+        </li>
+      </ul>
+      <!-- ##END MARKED WRAPPER## -->
+    </div>
+    <script async="" defer="" src="https://sa.spacemesh.fyi/latest.js"></script>
+    <noscript
+      ><img
+        src="https://sa.spacemesh.fyi/noscript.gif"
+        alt=""
+        referrerpolicy="no-referrer-when-downgrade"
+    /></noscript>
+  </body>
+</html>
